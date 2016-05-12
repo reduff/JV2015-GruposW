@@ -10,13 +10,13 @@
 import java.util.Date;
 import java.util.Scanner;
 
-import accesoDato.Datos;
+import accesoDatos.Datos;
 import accesoUsr.Presentacion;
 import modelo.*;
 
 public class JVPrincipal {	
 	public static void main(String[] args) {				
-		Datos datos = new Datos();
+		Datos datos = Datos.getInstancia();
 		Presentacion presentacion = new Presentacion();
 		
 		presentacion.mostrar(datos.textoDatosUsuarios());
