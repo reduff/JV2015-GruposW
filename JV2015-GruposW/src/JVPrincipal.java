@@ -11,19 +11,24 @@ import java.util.Date;
 import java.util.Scanner;
 
 import accesoDatos.Datos;
+import accesoDatos.test.DatosPrueba;
 import accesoUsr.Presentacion;
 import modelo.*;
+import modelo.Usuario.RolUsuario;
 
 public class JVPrincipal {	
 	public static void main(String[] args) {				
+		final int  MAX_USUARIOS_PRUEBA = 10;
 		Datos datos = Datos.getInstancia();
+		DatosPrueba.cargarUsuariosPrueba(MAX_USUARIOS_PRUEBA);
+		
 		Presentacion presentacion = new Presentacion();
 		
 		presentacion.mostrar(datos.textoDatosUsuarios());
 
 		if (presentacion.iniciarSesion(datos)) {
 			presentacion.arrancarSimulacion();
-		}
+		}	
 	}
 
 } //class
