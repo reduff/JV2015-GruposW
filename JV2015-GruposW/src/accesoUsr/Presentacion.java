@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-import accesoDato.Datos;
+import accesoDatos.Datos;
 import modelo.Contraseña;
 import modelo.SesionUsuario;
 import modelo.Usuario;
@@ -24,6 +24,8 @@ public class Presentacion {
 	final int CICLOS = 120;
 	private Scanner teclado = new Scanner(System.in);	//Entrada por consola
 	private byte[][] mundo;
+	
+	private Datos datos = Datos.getInstancia();
 	
 	/**
 	 * Constructor
@@ -67,7 +69,7 @@ public class Presentacion {
 			String clave = teclado.nextLine();
 			
 			// Obtiene idUsr que corresponde
-			credencialUsr = datos.equivalenciaId(credencialUsr);	
+			credencialUsr = datos.getEquivalenciaId(credencialUsr);	
 			
 			// Busca usuario coincidente con credencial
 			System.out.println(credencialUsr);
