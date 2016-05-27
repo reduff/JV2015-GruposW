@@ -97,7 +97,7 @@ public class Datos {
 	 * @param usr - el usuario a guardar.
 	 * @throws AccesoDatosException 
 	 */
-	public void altaUsuario(Usuario usr) throws AccesoDatosException {
+	public void altaUsuario(Usuario usr) throws DatosException {
 		assert usr != null;
 		int comparacion;
 		int inicio = 0;
@@ -110,7 +110,7 @@ public class Datos {
 			comparacion = datosUsuarios.get(medio).getIdUsr()
 					.compareToIgnoreCase(usr.getIdUsr());
 			if (comparacion == 0) {			
-				throw new AccesoDatosException("El Usuario ya existe...");   				  
+				throw new DatosException("El Usuario ya existe...");   				  
 			}		
 			if (comparacion < 0) {
 				inicio = medio + 1;
@@ -139,7 +139,7 @@ public class Datos {
 	 * @param mundo - el mundo a guardar.
 	 * @throws AccesoDatosException 
 	 */
-	public void altaMundo(Mundo mundo) throws AccesoDatosException {
+	public void altaMundo(Mundo mundo) throws DatosException {
 		assert mundo != null;
 		int comparacion;
 		int inicio = 0;
@@ -152,7 +152,7 @@ public class Datos {
 			comparacion = datosMundos.get(medio).getNombre()
 					.compareToIgnoreCase(mundo.getNombre());
 			if (comparacion == 0) {			
-				throw new AccesoDatosException("El Mundo ya existe...");   				  
+				throw new DatosException("El Mundo ya existe...");   				  
 			}		
 			if (comparacion < 0) {
 				inicio = medio + 1;
