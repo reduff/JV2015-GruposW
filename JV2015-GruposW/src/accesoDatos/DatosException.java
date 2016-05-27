@@ -1,21 +1,20 @@
 /** 
  * Proyecto: Juego de la vida.
- *  jv2014.ajp
  * Maneja los errores de acceso a datos.
- *  @since: prototipo2
- *  @source: AccesoDatosException.java 
- * @version: 2.2 - 18/05/2015 
+ *  @since: prototipo2.1
+ *  @source: DatosException.java 
+ * @version: 1.0 - 2016/05/25
  *  @author: ajp
  */
 
 package accesoDatos;
 
-public class AccesoDatosException extends Exception {
+public class DatosException extends Exception {
 
 	/**
 	 * Excepción por defecto sin mensaje
 	 */
-	public AccesoDatosException() {
+	public DatosException() {
 		super();
 	}
 	
@@ -23,7 +22,7 @@ public class AccesoDatosException extends Exception {
 	 * Excepción con mensaje
 	 * @param msg - el mensaje de error asociado
 	 */
-	public AccesoDatosException(String msg) {
+	public DatosException(String msg) {
 		super(msg);
 	}
 }

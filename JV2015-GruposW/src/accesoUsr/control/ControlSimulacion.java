@@ -1,26 +1,33 @@
 package accesoUsr.control;
 
-import accesoDatos.Datos;
+import accesoDatos.GestionDatos;
 import accesoUsr.vista.VistaSimulacionTexto;
 import modelo.Mundo;
+import modelo.SesionUsuario;
 import modelo.Simulacion;
 
 public class ControlSimulacion {
-	Datos datos = Datos.getInstancia();
+	GestionDatos datos = GestionDatos.getInstancia();
 	final int CICLOS = 120;
 	VistaSimulacionTexto vista;
 	Simulacion simulacion;
 	Mundo mundo;
+	SesionUsuario sesion; 
 	
-	public ControlSimulacion() {
+	public ControlSimulacion(SesionUsuario sesion) {
+		this.sesion = sesion;
 		initControlSimulacion();
 	}
 	
-	private void initControlSimulacion() {
-		simulacion = datos.getDatosSimulaciones().get(0);
+	private void initControlSimulacion() {	
+		simulacion = datos.obtenerSimulacion(obtenerId());
 		mundo = simulacion.getMundo();	
 		vista = new VistaSimulacionTexto();
 		arrancarSimulacion();	
+	}
+
+	private String obtenerId() {
+		return sesion.getUsr().getIdUsr() + mundo.getNombre();
 	}
 
 	/**
