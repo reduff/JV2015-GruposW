@@ -1,3 +1,6 @@
+
+package accesoDatos;
+
 /** 
  * Proyecto: Juego de la vida.
  * Maneja los errores de acceso a datos.
@@ -6,9 +9,6 @@
  * @version: 1.0 - 2016/05/25
  *  @author: ajp
  */
-
-package accesoDatos;
-
 public class DatosException extends Exception {
 
 	/**

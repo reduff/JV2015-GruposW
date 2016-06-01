@@ -64,6 +64,16 @@ public class MundosDAO implements OperacionesDAO {
 	}
 
 	/**
+	 * Búsqueda de Usuario dado un objeto, reenvía al método que utiliza nombre.
+	 * @param obj - el Mundo a buscar.
+	 * @return - el Mundo encontrado; null si no existe.
+	 */
+	@Override
+	public Mundo obtener(Object obj)  {
+		return this.obtener(((Mundo) obj).getNombre());
+	}
+	
+	/**
 	 * Búsqueda de Mundo.
 	 * @param mundo - el Mundo a buscar.
 	 * @return - el Mundo encontrado o null si no existe.
@@ -103,8 +113,6 @@ public class MundosDAO implements OperacionesDAO {
 			}
 		}	
 		datosMundos.add(inicio, mundo); 	// Inserta el mundo en orden.		
-
-		
 	}
 
 	@Override
@@ -125,4 +133,4 @@ public class MundosDAO implements OperacionesDAO {
 		return null;
 	}
 
-}
+} // class
