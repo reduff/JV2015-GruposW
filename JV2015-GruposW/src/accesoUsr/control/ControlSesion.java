@@ -21,7 +21,7 @@ public class ControlSesion {
 	public ControlSesion(String idUsr) {
 		initControlSesion(idUsr);
 	}
-
+	
 	private void initControlSesion(String idUsr) {
 		datos = GestionDatos.getInstancia();
 		vista = new VistaSesionTexto();

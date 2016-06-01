@@ -10,7 +10,7 @@ package accesoDatos;
 
 import java.util.List;
 
-import accesoDatos.memoria.*;
+import accesoDatos.fichero.*;
 import modelo.*;
 
 public class GestionDatos {
@@ -28,6 +28,7 @@ public class GestionDatos {
 	/**
 	 * Constructor por defecto de uso interno.
 	 * Sólo se ejecutará una vez.
+	 * @throws DatosException 
 	 */
 	private GestionDatos() {
 		usuariosDAO = UsuariosDAO.getInstancia();
@@ -55,6 +56,11 @@ public class GestionDatos {
 	 *  Cierra almacenes de datos.
 	 */
 	public void cerrar() {
+		usuariosDAO.guardarDatos();
+		sesionesDAO.guardarDatos();
+		patronesDAO.guardarDatos();
+		mundosDAO.guardarDatos();
+		simulacionesDAO.guardarDatos();
 	}
 
 	// FACHADA usuariosDAO
