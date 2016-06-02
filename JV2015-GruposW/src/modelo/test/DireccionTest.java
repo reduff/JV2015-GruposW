@@ -4,7 +4,7 @@
  *  @since: prototipo2.1
  *  @source: DireccionTest.java 
  *  @version: 1.0 - 19/05/2016 
- *  @author: Luis
+ *  @author: carlos samper
  */
    
 package modelo.test;
@@ -159,5 +159,9 @@ public class DireccionTest {
 	public void testToString() {
 		assertNotNull(direccion1.toString());
 	}
+	
+	public void PruebaDesss() {
 
+	}
+	
 }
